@@ -1,0 +1,73 @@
+@use 'forward' as index;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    @include index.flex(column, null, center, 2rem);
+    height: 100vh;
+    background-image: url('../imgs/bgimg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.header-title{
+    font-size: 10vw;
+    font-family: index.$title-font;
+    color: index.$header-title-color;
+}
+
+.main{
+    @include index.flex(column, center, center, 1rem);
+    padding: 3% 5%;
+    background-color: index.$main-bg-color;
+    color: index.$main-title;
+    box-shadow: 0 0 20px 3px #101e27;
+
+    &-title{
+        font-size: 6vw;
+        font-family: index.$text-font;
+    }
+
+    &-form{
+        @include index.flex(column, center, center, 0.8rem);
+
+        .form-input-container{
+            @include index.flex(row, center, center, 0.5rem);
+            background-color: index.$input-bg-color;
+            padding: 2%;
+            border-radius: 10px;
+
+            img{
+                width: 4vw;
+            }
+            input{
+                padding: 1%;
+                font-size: 2.75vw;
+                background: none;
+                border: none;
+                outline: 0;
+
+                &::placeholder{
+                    color: black;
+                }
+            }
+        }
+    }    
+
+    .submit-form-button{
+        padding: 3% 4%;
+        font-size: 3vw;
+        border-radius: 5px;
+        border: none;
+        background-color: index.$submit-form-btn-bg-color;
+    }
+}
